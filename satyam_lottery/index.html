@@ -1,0 +1,166 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="index.css">
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Lottery</title>
+  </head>
+  <body>
+      <header>
+        <div class="content">
+            <h1>
+              <span>L</span>
+              <span>o</span>
+              <span>t</span>
+              <span>t</span>
+              <span>e</span>
+              <span>r</span>
+              <span>y</span>
+            </h1>
+            <p class="text">“Life is a lottery that we’ve already won. But most people have not cashed in their tickets.”</p>
+            <!-- <h3>Ab aa hi gaye ho to maze karo</h3> -->
+            <!-- <p >aur batao kya haal chal hai sab badhiya hai ki nhi tumhe dekhe bahot din ho gaye tum mere sabse kareeb the ye baat hai uss daur ka jabb mai tumhe sabse jada pasand karta tha. sab bakwas hai tumhe to pta hi hai na  </p> -->
+            
+            <!-- <div class="color"></div> -->
+        </div> 
+        <!-- <p class="text">Aa gaye ho khel ke hi jao na ..aise mat jana please !!</p> -->
+        <!-- <video src="video.mp4" muted loop autoplay></video>  -->
+        <!-- <div class="overlay"></div> -->
+      </header>
+      <section>
+        <div class="card">
+          <div class="box">
+            <div class="step">
+              <h1>STEP 1</h1>
+              <p>Dekho yahan tak aaye ho to phle neeche button ko click karo aur usme se 2 digit ka number ayega faad ke usse yaad kar lo ....!!  Aab dusra step bhi padho</p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="step">
+              <h1>STEP 2</h1>
+              <p>Number yaad hai na. usse neeche le jakar textbox me daalo aur magic ka button dabao phir jadu dekho....!!  please read step 3 for more...  </p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="step">
+              <h1>STEP 3</h1>
+              <p>Congratulation aap jeet gaye...ye msg aayega to aap jeet jayenge...agar ye nhi aya to "PAHLI FURSAT ME NIKAL"......... jao muh kya bana rahe ho </p>
+            </div>
+          </div>
+        </div>
+        <div class="no" id="no">
+          <h1 id="output"></h1>
+        </div>
+        <div class="button">
+          <a id="btn">check your luck once !!</a> 
+          
+        </div>
+        
+      </section>
+      <div class="second" id="second">
+        <div class="contain">
+          
+            <input class="textbox" id="textbox" type="text" autocomplete="off">
+            <img id="img" src="21.jpg" alt="">
+            <h1 id="congrats">CONGRATULATION !!</h1>
+           
+            <!-- <input type="button" class="go" value="MAGIC"> -->
+            <button class="go" id="go" onclick="mag()">MAGIC</button>
+          
+        </div>
+        
+      </div>
+      <footer>
+        <div class="img-data">
+            <div class="footerimg">
+                <img src="" alt="" class="img-gal">
+            </div>
+            <div class="bars">
+                <img src="email.png" alt="">
+                <img src="insta.png" alt="">
+                <img src="fb.png" alt="">
+            </div>
+            <span class="dot">.</span>
+        </div>
+        <h6 class="copyright">&copy; CSI-AKGEC 2018</h6>
+    </footer>
+
+      
+
+      <script>
+        // document.getElementById("btn").addEventListener("click",function()
+        //   {
+        //    let step1 = 10;
+        //     let step2 = math.random()*step1;
+        //     let result = math.floor(step2) + 20;
+        //     document.getElementById("two").innerHTML = Math.floor(Math.random()*10) + 20;
+        //     var myBox= document.getElementById("no");
+        //     myBox.style.display="block"
+
+        //   }   
+        // );
+        var btn = document.querySelector('#btn');
+        var second = document.querySelector('#second');
+        // let output = document.querySelector('#output');
+        // let go = document.querySelector('#go');
+        // 
+
+        function getrandom(max, min){
+          let step1 = max - min + 1;
+          let step2 = Math.random() * step1;
+          let result = Math.floor(step2) + min;
+          return result;
+        }
+        btn.addEventListener( 'click', () =>{
+          output.innerText = getrandom(19,30);
+          btn.style.display = 'none'; 
+                 
+        });
+
+        function mag(){
+          var x = document.getElementById('textbox').value;
+          var img = document.getElementById('img')
+          if(x == 21){
+            img.style.display = "block";
+            img.src = "apoorv.webp"
+            document.getElementById('congrats').style.display = "block";
+            document.getElementById('go').style.display = 'none';
+            document.getElementById('textbox').style.display = 'none';
+          }
+          else if(x == 24){
+            img.style.display = "block";
+            img.src = "satyam.webp"
+            document.getElementById('congrats').style.display = "block";
+            document.getElementById('go').style.display = 'none';
+            document.getElementById('textbox').style.display = 'none';
+          }
+          else if(x == 25){
+            img.style.display = "block";
+            img.src = "rytham.webp"
+            document.getElementById('congrats').style.display = "block";
+            document.getElementById('go').style.display = 'none';
+            document.getElementById('textbox').style.display = 'none';
+          }
+          else{
+            img.style.display = "block";
+            img.src = "fursat.webp"
+            var c = document.getElementById('congrats');
+            c.style.display = "block";
+            c.innerText = "PAHLI FURSAT ME NIKAL";
+            document.getElementById('go').style.display = 'none';
+            document.getElementById('textbox').style.display = 'none';
+            
+          }
+        }
+        // function condition()
+        // go.addEventListener('click', ()=>{
+        //   if(x=='26') 
+        //   console.log('good');
+        // });
+        // console.log('good');
+
+      </script>
+  </body>
+  </html>
